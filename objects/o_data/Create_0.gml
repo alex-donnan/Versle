@@ -5,12 +5,14 @@ list_guess = ds_list_create();
 list_player_words = ds_list_create();
 //Map of letters
 grid_letter = ds_grid_create(5, 6);
+map_keyboard = ds_map_create();
 
 //Vars
 player_word = "";
 player_guess = "";
 player_index = 0;
 player_position = 0;
+anim_delay = 0;
 
 //Import answers and guesses
 var file_answer = file_text_open_read(working_directory + "answers.txt");
@@ -49,7 +51,7 @@ function letter(_pos, _ind) constructor {
 	x_pos = 30 + (69 * _pos);
 	y_pos = o_data.y + (69 * _ind);
 	y_scale = 0;
-	y_scale_count = floor(room_speed / 3);
+	y_scale_count = floor(room_speed / 2);
 	//alpha
 	alpha = (y_pos == o_data.y) ? 1 : 0;
 }
@@ -72,7 +74,8 @@ function check_guess() {
 			for (var xx = 0; xx < 5; ++xx) {
 				var temp_letter = grid_letter[# xx, player_index];
 				temp_letter.sub_img = check_value.correct;
-				temp_letter.y_scale = 1;
+				temp_letter.color_change = true;
+				temp_letter.y_scale_count += xx * 5;
 			}
 			//Update the letters
 			ds_list_add(list_player_words, player_guess);
@@ -81,6 +84,10 @@ function check_guess() {
 			player_guess = "";
 			player_position = 0;
 			player_index++;
+			//Reset keyboard
+			with (o_button) {
+				sub_img = 0;
+			}
 		} else if (ds_list_find_index(list_guess, string_lower(player_guess)) != NULL) {
 			show_debug_message("Good guess but no.");
 			//Color letters
@@ -88,13 +95,17 @@ function check_guess() {
 				var temp_letter = grid_letter[# xx, player_index];
 				if (string_pos(string_lower(temp_letter.letter_value), player_word) == xx + 1) {
 					temp_letter.sub_img = check_value.correct;
-					temp_letter.y_scale = 1;
 				} else if (string_pos(string_lower(temp_letter.letter_value), player_word) > 0 && string_count(string_lower(temp_letter.letter_value), player_word) == string_count(temp_letter.letter_value, player_guess)) {
 					temp_letter.sub_img = check_value.present;
-					temp_letter.y_scale = 1;
 				} else {
 					temp_letter.sub_img = check_value.missing;	
-					temp_letter.y_scale = 1;
+				}
+				temp_letter.color_change = true;
+				temp_letter.y_scale_count += xx * 5;
+				with(map_keyboard[? temp_letter.letter_value]) {
+					if (sub_img < temp_letter.sub_img) {
+						sub_img = temp_letter.sub_img;	
+					}
 				}
 			}
 			//Update the letters

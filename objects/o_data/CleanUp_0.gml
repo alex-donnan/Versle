@@ -15,3 +15,7 @@ if (ds_exists(list_player_words, ds_type_list)) {
 if (ds_exists(grid_letter, ds_type_grid)) {
 	ds_grid_destroy(grid_letter);
 }
+
+if (ds_exists(map_keyboard, ds_type_map)) {
+	ds_map_destroy(map_keyboard);	
+}

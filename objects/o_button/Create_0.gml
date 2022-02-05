@@ -2,8 +2,6 @@
 
 //Vals
 pressed = false;
-letter_correct = false;
-letter_maybe = false;
 
 //Animation
 sub_img = 0;

@@ -1,8 +1,42 @@
 {
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "type": 0,
+  "origin": 0,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 0,
+  "bbox_right": 35,
+  "bbox_top": 0,
+  "bbox_bottom": 47,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 36,
+  "height": 48,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
   },
+  "swatchColours": null,
+  "gridX": 8,
+  "gridY": 8,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"54c6080d-3473-4327-b05e-7a710acafb53","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"54c6080d-3473-4327-b05e-7a710acafb53","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"54c6080d-3473-4327-b05e-7a710acafb53","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
   "sequence": {
     "spriteId": {"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},
     "timeUnits": 1,
@@ -42,40 +76,6 @@
     "tags": [],
     "resourceType": "GMSequence",
   },
-  "bboxMode": 0,
-  "collisionKind": 1,
-  "type": 0,
-  "origin": 0,
-  "preMultiplyAlpha": false,
-  "edgeFiltering": false,
-  "collisionTolerance": 0,
-  "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 35,
-  "bbox_top": 0,
-  "bbox_bottom": 47,
-  "HTile": false,
-  "VTile": false,
-  "For3D": false,
-  "width": 36,
-  "height": 48,
-  "swatchColours": null,
-  "gridX": 8,
-  "gridY": 8,
-  "frames": [
-    {"compositeImage":{"FrameId":{"name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"e49fd074-c4c5-477a-ad7d-ca95e432e403","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"ab5fc144-73e6-45cb-b1d3-17bbcf98d73c","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"e6b317fc-039f-46ed-8ffd-9865601a3f5b","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"54c6080d-3473-4327-b05e-7a710acafb53","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"54c6080d-3473-4327-b05e-7a710acafb53","path":"sprites/sp_letter_button/sp_letter_button.yy",},"LayerId":{"name":"c39165d6-8e71-4b73-b383-3bc17327c41b","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"resourceVersion":"1.0","name":"54c6080d-3473-4327-b05e-7a710acafb53","tags":[],"resourceType":"GMSpriteFrame",},
-  ],
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c39165d6-8e71-4b73-b383-3bc17327c41b","tags":[],"resourceType":"GMImageLayer",},
   ],
