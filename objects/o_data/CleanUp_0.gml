@@ -12,6 +12,10 @@ if (ds_exists(list_player_words, ds_type_list)) {
 	ds_list_destroy(list_player_words);	
 }
 
+if (ds_exists(list_notify, ds_type_list)) {
+	ds_list_destroy(list_notify);	
+}
+
 if (ds_exists(grid_letter, ds_type_grid)) {
 	ds_grid_destroy(grid_letter);
 }

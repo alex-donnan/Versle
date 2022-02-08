@@ -1,5 +1,9 @@
 /// @description game controller
 
+randomize();
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+
 #macro NULL -1
 #macro LEFT_CLICK device_mouse_check_button(0, mb_left)
 #macro LEFT_RELEASE device_mouse_check_button_released(0, mb_left)

@@ -2,6 +2,7 @@
 
 //Vals
 pressed = false;
+active = true;
 
 //Animation
 sub_img = 0;
