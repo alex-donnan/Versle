@@ -1,0 +1,5 @@
+Notifications only fire if they are at the base of the list (queue)
+Point location and animation
+Tell word at end
+
+Networking...

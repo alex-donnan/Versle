@@ -1,6 +1,6 @@
 /// @description Letter object
 
-debug = true;
+debug = false;
 
 /*
 	Variables
@@ -25,7 +25,7 @@ anim_delay = 0;
 player_timer = room_speed * 30.9;
 
 //Colors
-present_color = make_color_rgb(229, 191, 68);
+present_color = make_color_rgb(68, 140, 203);
 
 //Exclamations?
 exclaim = ["Good job!", "You got it!", "Nice!", "Right on!", "Word....le!"];
@@ -149,7 +149,7 @@ function check_guess() {
 				sub_img = 0;
 			}
 			//Send the buffer to the server (new function)
-			ds_list_add(list_notify, new notification(notify_type.scroll_down, exclaim[irandom(4)], notify_speed.slow, 202, 200));
+			ds_list_add(list_notify, new notification(notify_type.scroll_down, exclaim[irandom(4)], notify_speed.slow, 202, 180));
 		} else if (ds_list_find_index(list_guess, string_lower(player_guess)) != NULL) {
 			show_debug_message("Good guess but no.");
 			//Color letters
@@ -185,11 +185,11 @@ function check_guess() {
 				with (o_button) {
 					sub_img = 0;
 				}
-				ds_list_add(list_notify, new notification(notify_type.scroll_down, "Out of guesses!", notify_speed.slow, 202, 200));
+				ds_list_add(list_notify, new notification(notify_type.scroll_down, "Out of guesses!", notify_speed.slow, 202, 180));
 			}
 		} else {
 			show_debug_message("Nothing to see here.");
-			ds_list_add(list_notify, new notification(notify_type.scroll_down, "That is not a valid guess.", notify_speed.slow, 202, 200));
+			ds_list_add(list_notify, new notification(notify_type.scroll_down, "That is not a valid guess.", notify_speed.slow, 202, 180));
 		}
 	}
 }

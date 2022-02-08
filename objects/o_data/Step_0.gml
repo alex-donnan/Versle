@@ -8,7 +8,7 @@ if (player_timer == 0) {
 		active = false;	
 	}
 	//Time out notification
-	ds_list_add(list_notify, new notification(notify_type.scroll_down, "Timed out!", notify_speed.slow, 202, 200));
+	ds_list_add(list_notify, new notification(notify_type.scroll_down, "Timed out!", notify_speed.slow, 202, 180));
 	anim_delay = 30;
 	//Update the letters
 	for (var xx = 0; xx < 5; ++xx) {

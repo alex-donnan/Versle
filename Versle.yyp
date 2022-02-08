@@ -1,10 +1,13 @@
 {
   "resources": [
+    {"id":{"name":"Things to do","path":"notes/Things to do/Things to do.yy",},"order":74,},
     {"id":{"name":"o_button","path":"objects/o_button/o_button.yy",},"order":1,},
     {"id":{"name":"o_control","path":"objects/o_control/o_control.yy",},"order":0,},
     {"id":{"name":"sp_divider","path":"sprites/sp_divider/sp_divider.yy",},"order":3,},
     {"id":{"name":"sp_big_button","path":"sprites/sp_big_button/sp_big_button.yy",},"order":1,},
+    {"id":{"name":"o_point","path":"objects/o_point/o_point.yy",},"order":3,},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},"order":1,},
+    {"id":{"name":"sp_player_point","path":"sprites/sp_player_point/sp_player_point.yy",},"order":4,},
     {"id":{"name":"sp_letter_button","path":"sprites/sp_letter_button/sp_letter_button.yy",},"order":0,},
     {"id":{"name":"o_data","path":"objects/o_data/o_data.yy",},"order":2,},
     {"id":{"name":"sp_letter","path":"sprites/sp_letter/sp_letter.yy",},"order":2,},

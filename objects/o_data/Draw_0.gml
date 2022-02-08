@@ -1,18 +1,18 @@
 /// @description rotate counter
 
 //Divider
-draw_sprite_ext(sp_divider, 1, 0, 229, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sp_divider, 1, 0, 220, 1, 1, 0, c_white, 1);
 if (player_timer > 0) {
-	draw_rectangle_color(max(9, 395 - 391 * (player_timer / (room_speed * 30.9))), 226, 395, 231, present_color, present_color, present_color, present_color, false);
+	draw_rectangle_color(max(9, 395 - 391 * (player_timer / (room_speed * 30.9))), 217, 395, 222, present_color, present_color, present_color, present_color, false);
 }
-draw_sprite_ext(sp_divider, 0, 0, 229, 1, 1, 0, c_white, 1);
+draw_sprite_ext(sp_divider, 0, 0, 220, 1, 1, 0, c_white, 1);
 
 //Letters
 for (var yy = player_index - 4; yy < player_index + 1; ++yy) {
 	if (yy >= 0) {
 		for (var xx = 0; xx < 5; ++xx) {
 			with (grid_letter[# xx, yy]) {
-				draw_sprite_ext(sp_letter, 0, x_pos, y_pos, 1, 1, 0, c_white, alpha);
+				draw_sprite_ext(sp_letter, 0, x_pos, y_pos, 1, 1, 0, c_white, alpha * max(0.5, string_length(letter_value)));
 				draw_sprite_ext(sp_letter, sub_img, x_pos, y_pos, 1, y_scale, 0, c_white, alpha);
 				draw_text_ext_color(x_pos + 32, y_pos, letter_value, 12, 12, c_white, c_white, c_white, c_white, alpha);
 			}
