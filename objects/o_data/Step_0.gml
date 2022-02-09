@@ -30,10 +30,9 @@ if (player_timer == 0) {
 	}
 	//if last guess, send to new word
 	if (player_index == player_word_index + 6) {
+		ds_list_add(list_notify, new notification(notify_type.scroll_down, "Out of guesses!", notify_speed.slow, 202, 180));
+		ds_list_add(list_notify, new notification(notify_type.scroll_down, "The word was... " + player_word + "!", notify_speed.very_slow, 202, 180));
 		reset_word();
-		with (list_notify[| ds_list_size(list_notify) - 1]) {
-			note_text = "Timed out and out of guesses!"
-		}
 		player_word_index = player_index;
 	}
 	
@@ -61,7 +60,7 @@ if (player_timer != 0) {
 			if (yy >= 0) {
 				for (var xx = 0; xx < 5; ++xx) {
 					var temp_letter = grid_letter[# xx, yy];
-					temp_letter.y_pos = (yy >= player_word_index) ? lerp(temp_letter.y_pos, y + (temp_letter.index - player_index) * 69, 0.3) : lerp(temp_letter.y_pos, y + 345, 0.3);
+					temp_letter.y_pos = (yy >= player_word_index) ? lerp(temp_letter.y_pos, y + (temp_letter.index - player_index) * 69, 0.3) : lerp(temp_letter.y_pos, y - 345, 0.1);
 					//Alpha
 					if (temp_letter.y_pos < y && temp_letter.y_pos < y - 207) {
 						temp_letter.alpha = 1 - (abs(temp_letter.y_pos - y - 138) / 138);
@@ -93,8 +92,8 @@ if (player_timer != 0) {
 }
 
 //Notifications
-for (var xx = 0; xx < ds_list_size(list_notify); ++xx) {
-	var temp_notify = list_notify[| xx];
+if (ds_list_size(list_notify) > 0) {
+	var temp_notify = list_notify[| 0];
 	with (temp_notify) {
 		if (note_speed > 0) {
 			var dif = (note_type == 0) ? (2 * pi) - (pi / 2) : note_type - (pi / 2);
@@ -123,6 +122,6 @@ for (var xx = 0; xx < ds_list_size(list_notify); ++xx) {
 	}
 	//destroy if at end
 	if (temp_notify.note_speed == 0 && temp_notify.alpha == 0) {
-		ds_list_delete(list_notify, xx);	
+		ds_list_delete(list_notify, 0);	
 	}
 }

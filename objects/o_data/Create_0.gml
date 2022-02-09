@@ -1,6 +1,6 @@
 /// @description Letter object
 
-debug = false;
+debug = true;
 
 /*
 	Variables
@@ -48,6 +48,7 @@ enum notify_type {
 }
 
 enum notify_speed {
+	very_slow = 120,
 	slow = 60,
 	medium = 30,
 	fast = 15,
@@ -157,7 +158,7 @@ function check_guess() {
 				var temp_letter = grid_letter[# xx, player_index];
 				if (string_char_at(player_word, xx + 1) == string_lower(temp_letter.letter_value)) {
 					temp_letter.sub_img = check_value.correct;
-				} else if (string_char_at(player_word, xx + 1) != string_lower(temp_letter.letter_value) && string_count(string_lower(temp_letter.letter_value), player_word) >= string_count(temp_letter.letter_value, player_guess)) {
+				} else if (string_char_at(player_word, xx + 1) != string_lower(temp_letter.letter_value) && string_count(string_lower(temp_letter.letter_value), player_word) >= string_count(temp_letter.letter_value, string_copy(player_guess, 1, xx + 1))) {
 					temp_letter.sub_img = check_value.present;
 				} else{
 					temp_letter.sub_img = check_value.missing;	
@@ -178,6 +179,8 @@ function check_guess() {
 			reset_timer(30);
 			//Send the buffer to the server (new function)
 			if (player_index == player_word_index + 6) {
+				ds_list_add(list_notify, new notification(notify_type.scroll_down, "Out of guesses!", notify_speed.slow, 202, 180));
+				ds_list_add(list_notify, new notification(notify_type.scroll_down, "The word was... " + player_word + "!", notify_speed.very_slow, 202, 180));
 				reset_word();
 				player_word_index = player_index;
 				reset_timer(30);
@@ -185,7 +188,6 @@ function check_guess() {
 				with (o_button) {
 					sub_img = 0;
 				}
-				ds_list_add(list_notify, new notification(notify_type.scroll_down, "Out of guesses!", notify_speed.slow, 202, 180));
 			}
 		} else {
 			show_debug_message("Nothing to see here.");
