@@ -67,7 +67,7 @@ function letter(_pos, _ind) constructor {
 	letter_value = "";
 	
 	//Animation
-	sub_img = 1;
+	sub_img = check_value.missing;
 	x_pos = 30 + (69 * _pos);
 	y_pos = o_data.y + (69 * _ind);
 	y_scale = 0;
@@ -153,16 +153,27 @@ function check_guess() {
 			ds_list_add(list_notify, new notification(notify_type.scroll_down, exclaim[irandom(4)], notify_speed.slow, 202, 180));
 		} else if (ds_list_find_index(list_guess, string_lower(player_guess)) != NULL) {
 			show_debug_message("Good guess but no.");
-			//Color letters
+			var temp_word = player_word;
+			var offset = 0;
+			//First pass remove correct values
 			for (var xx = 0; xx < 5; ++xx) {
 				var temp_letter = grid_letter[# xx, player_index];
-				if (string_char_at(player_word, xx + 1) == string_lower(temp_letter.letter_value)) {
+				if (string_char_at(temp_word, xx + 1 - offset) == string_lower(temp_letter.letter_value)) {
 					temp_letter.sub_img = check_value.correct;
-				} else if (string_char_at(player_word, xx + 1) != string_lower(temp_letter.letter_value) && string_count(string_lower(temp_letter.letter_value), player_word) >= string_count(temp_letter.letter_value, string_copy(player_guess, 1, xx + 1))) {
-					temp_letter.sub_img = check_value.present;
-				} else{
-					temp_letter.sub_img = check_value.missing;	
+					temp_word = string_replace(temp_word, string_lower(temp_letter.letter_value), "");
+					++offset
 				}
+				show_debug_message(temp_word);
+			}
+			//Second pass remove present values and update
+			for (var xx = 0; xx < 5; ++xx) {
+				var temp_letter = grid_letter[# xx, player_index];
+				if (string_count(string_lower(temp_letter.letter_value), temp_word) > 0) {
+					temp_letter.sub_img = check_value.present;
+					temp_word = string_replace(temp_word, string_lower(temp_letter.letter_value), "");
+				}
+				show_debug_message(temp_word);
+				//update them all
 				temp_letter.color_change = true;
 				temp_letter.y_scale_count += xx * 5;
 				with(map_keyboard[? temp_letter.letter_value]) {
@@ -171,6 +182,7 @@ function check_guess() {
 					}
 				}
 			}
+				
 			//Update the letters
 			create_letters();
 			player_guess = "";

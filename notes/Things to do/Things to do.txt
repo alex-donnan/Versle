@@ -1,4 +1,5 @@
 
-Point location and animation - see paint img
-
-Networking...
+o_network:
+	Display points ala letter struct
+		1/3 and 2/3 points, grid just matches active plays
+	Networking...
