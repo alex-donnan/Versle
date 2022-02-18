@@ -83,9 +83,10 @@ if (player_timer != 0) {
 			--temp_letter.y_scale_count;
 			if (temp_letter.y_scale_count <= floor(room_speed / 2) && temp_letter.y_scale_count > 0) {
 				temp_letter.y_scale = lerp(temp_letter.y_scale, 1, 1 / temp_letter.y_scale_count);
-			} else if (temp_letter.y_scale = 1) {
+			} else if (temp_letter.y_scale + 0.05 >= 1) {
+				temp_letter.y_scale = 1;
 				temp_letter.color_change = false;
-				anim_delay = 20;
+				anim_delay = (player_index == player_word_index) ? 60 : 20;
 			}
 		}
 	}
