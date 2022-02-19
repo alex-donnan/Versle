@@ -12,3 +12,5 @@ draw_set_valign(fa_center);
 
 //Init other objects!
 instance_create_depth(30, 498, 0, o_data);
+
+//Networking time
