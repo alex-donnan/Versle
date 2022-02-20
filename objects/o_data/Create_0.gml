@@ -94,9 +94,12 @@ function notification(_type, _text, _speed, _x, _y) constructor {
 	Populate
 */
 //Import answers and guesses
-var file_answer = file_text_open_read(working_directory + "answers.txt");
-var file_guess = file_text_open_read(working_directory + "allowed_guess.txt");
+buffer_answer = buffer_create(17000, buffer_fixed, 1);
+buffer_guess = buffer_create(74000, buffer_fixed, 1);
+file_answer = buffer_load_async(buffer_answer, working_directory + "answers.txt", 1, 17000);
+file_guess = buffer_load_async(buffer_guess, working_directory + "allowed_guess.txt", 1, 74000);
 
+/*
 while (file_answer != 0 && !file_text_eof(file_answer)) {
 	var line_text = file_text_read_string(file_answer);
 	ds_list_add(list_answer, line_text);
@@ -117,7 +120,7 @@ for (var yy = 0; yy < 6; ++yy) {
 		grid_letter[# xx, yy] = new letter(xx, yy);
 	}
 }
-
+*/
 /*
 	Functions
 */
